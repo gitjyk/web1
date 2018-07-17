@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <title>G9First - Welcome</title>
+  <!-- <meta charset="utf-8">
+  -->
+  <script>
+    function changeCaption(cap) {
+         document.getElementById("fruit").innerText = cap;
+    }
+  </script>
+
+</head>
+<body>
+  <h1><a href="index.html">G9 Home</a></h1>
+  <ol>
+    <li><a href="g9home/541.html">G9Farm</a></li>
+    <li><a href="HTML/htmlhome.html">HTML</a></li>
+    <li><a href="INFO/infohome.html">GENERAL INFOMATION</a></li>
+    <li><a href="MFC/MfcHome.html">MFC INFOMATION</a></li>
+    <li><a href="VSCODE/VsCodeHome.html">VSCODE INFOMATION</a></li>
+
+  </ol>
+  <h2>G9-HOME History</h2>
+  <h2 id="nowtime">현재 시간</h2>
+
+  <script>
+      setInterval(function() {
+           var now = new Date();
+           var nowtime = "현재 시간은 " + now.getFullYear() + "년 " +
+                (now.getMonth() + 1) + "월 " +   now.getDate() + "일 " + now.getHours() + ":" + now.getMinutes() +
+                ":" + now.getSeconds() + "입니다.";
+           document.getElementById("nowtime").innerHTML = nowtime;
+           }, 1000);
+  </script>
+
+<p id="fruit">과일</p>
+<form>
+    <input type="button" value="Apple" onClick="changeCaption('Apple')">
+    <input type="button" value="Orange" onClick="changeCaption('Orange')">
+</form>
+
+<h1>Hello Web Pages</h1> 
+<p>The time is @DateTime.Now</p>
+
+<?php
+echo "My first PHP script!";
+?> 
+
+<?php
+$myfile = fopen("MyDoc/MyHistory.txt", "r") or die("Unable to open file!");
+echo fread($myfile,filesize("webdictionary.txt"));
+fclose($myfile);
+?>
+<p>
+  <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://web1-2.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</p>
+</body>
+</html>
